@@ -15,3 +15,29 @@ def hourglass_sum(arr):
     return max(hourglasses)
 
 
+def minimum_bribes(q):
+    total = 0
+    local_total = 0
+    for i in range(len(q)):
+        if q[i] - (i + 1) > 2:
+            print('Too chaotic')
+            return
+        for j in range(i, len(q)):
+            if q[i] > q[j]:
+                local_total += 1
+            if local_total > 2:
+                break
+        if local_total > 2:
+            break
+        total += local_total
+        local_total = 0
+    print(total)
+
+
+# minimum_bribes([2, 1, 5, 3, 4])
+# minimum_bribes([2, 5, 1, 3, 4])
+# minimum_bribes([1, 2, 5, 3, 7, 8, 6, 4])
+# minimum_bribes([5, 1, 2, 3, 7, 8, 6, 4])
+
+
+
