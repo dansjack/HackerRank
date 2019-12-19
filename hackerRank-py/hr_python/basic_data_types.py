@@ -1,3 +1,4 @@
+from collections import OrderedDict
 
 
 def list_comprehensions(x, y, z, n):
@@ -5,17 +6,22 @@ def list_comprehensions(x, y, z, n):
             range(z + 1) if ((i + j + k) != n)]
 
 
-def minion_game(s):
-    scores = {'stuart': 0, 'kevin': 0}
-    for i in range(len(s)):
-        if s[i] in 'AEIOU':
-            scores['kevin'] += len(s) - i
-        else:
-            scores['stuart'] += len(s) - i
+def nested_lists(n):
+    grades = {}
+    for i in range(n):
+        name = input()
+        grades[name] = float(input())
 
-    if scores['kevin'] > scores['stuart']:
-        ('{} {}'.format('Kevin', scores['kevin']))
-    elif scores['kevin'] < scores['stuart']:
-        print('{} {}'.format('Stuart', scores['stuart']))
-    else:
-        print('Draw')
+    sorted_grades = sorted([[v, k] for k, v in grades.items()])
+    minimum = sorted_grades[0][0]
+    sorted_grades = [k for k in sorted_grades if k[0] != minimum]
+
+    print(sorted_grades)
+    minimum = sorted_grades[0][0]
+
+    for k in sorted_grades:
+        if k[0] == minimum:
+            print(k[1])
+
+
+nested_lists(4)
