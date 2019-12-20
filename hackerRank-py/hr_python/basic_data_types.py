@@ -39,3 +39,24 @@ def finding_the_percentage(n):
     avg /= len(d[query])
     print('{:0.2f}'.format(avg))
 
+
+def lists(n):
+    result = []
+    while n > 0:
+        args = input().split()
+        instruction = args.pop(0)
+        if instruction == 'insert':
+            result.insert(int(args[0]), int(args[1]))
+        elif instruction == 'remove':
+            result.remove(int(args[0]))
+        elif instruction == 'append':
+            result.append(int(args[0]))
+        elif instruction == 'pop':
+            result.pop()
+        elif instruction == 'sort':
+            result.sort()
+        elif instruction == 'reverse':
+            result.reverse()
+        elif instruction == 'print':
+            print('{}'.format(result))
+        n -= 1
