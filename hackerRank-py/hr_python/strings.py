@@ -1,3 +1,6 @@
+from collections import OrderedDict
+
+
 def minion_game(s):
     scores = {'stuart': 0, 'kevin': 0}
     for i in range(len(s)):
@@ -23,4 +26,18 @@ def swap_case(s):
             result += i.lower()
     return result
 
+
+def merge_the_tools(s, k):
+    i = 0
+    while i < len(s):
+        # Python 3.7+, dict.fromkeys returns (from list) a dict in sorted order
+        print(''.join([str(i) for i in list(dict.fromkeys(list(s[i:i + k])))]))
+        i += k
+
+
+
+
+
+
+merge_the_tools('AABCAAADA', 3)
 
