@@ -12,3 +12,15 @@ def minion_game(s):
         print('{} {}'.format('Stuart', scores['stuart']))
     else:
         print('Draw')
+
+
+def swap_case(s):
+    result = ''
+    for i in s:
+        if i.islower():
+            result += i.upper()
+        else:
+            result += i.lower()
+    return result
+
+
