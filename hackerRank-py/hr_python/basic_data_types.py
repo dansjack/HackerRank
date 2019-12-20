@@ -24,4 +24,18 @@ def nested_lists(n):
             print(k[1])
 
 
-nested_lists(4)
+def finding_the_percentage(n):
+    d = {}
+    while n > 0:
+        name, math, phys, chem = input().split()
+        d[name] = (float(math), float(phys), float(chem))
+
+        n -= 1
+
+    query = input()
+    avg = 0
+    for i in d[query]:
+        avg += i
+    avg /= len(d[query])
+    print('{:0.2f}'.format(avg))
+
