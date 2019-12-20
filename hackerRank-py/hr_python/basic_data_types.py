@@ -60,3 +60,7 @@ def lists(n):
         elif instruction == 'print':
             print('{}'.format(result))
         n -= 1
+
+
+def tuples(n):
+    print(hash(tuple([int(i) for i in input().split()])))
