@@ -10,8 +10,6 @@ public class HR_Arrays {
 
   public static void main(String[] args) {
 
-
-
   }
 
   public static void arraysDS() {
@@ -29,6 +27,7 @@ public class HR_Arrays {
   }
 
   public static void leftRotation() {
+    //  https://www.hackerrank.com/challenges/array-left-rotation/problem
     Scanner reader = new Scanner(System.in);
     int n = reader.nextInt();
     int d = reader.nextInt();
@@ -43,5 +42,34 @@ public class HR_Arrays {
       System.out.print(q.remove() + " ");
     }
   }
+
+  public static void sparseArrays() {
+    // https://www.hackerrank.com/challenges/sparse-arrays/problem
+    Scanner reader = new Scanner(System.in);
+    int n = reader.nextInt();
+    String[] strings = new String[n];
+    for (int i = 0; i < n; i++) {
+      strings[i] = reader.next();
+    }
+    int q = reader.nextInt();
+    String[] queries = new String[q];
+    for (int i = 0; i < q; i++) {
+      queries[i] = reader.next();
+    }
+    reader.close();
+    int[] result = new int[q];
+    for (int i = 0; i < queries.length; i++) {
+      for (int j = 0; j < strings.length; j++) {
+        if (queries[i].equals(strings[j])) {
+          result[i] += 1;
+        }
+      }
+    }
+    for (int i :
+        result) {
+      System.out.println(i);
+    }
+  }
+
 
 }
