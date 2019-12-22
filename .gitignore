@@ -115,3 +115,5 @@ dmypy.json
 *.iml
 *.xml
 */.idea
+*.kotlin_module
+*.class
